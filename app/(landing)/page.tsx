@@ -53,17 +53,18 @@ const Home = () => {
           </div>
           <div className="relative group">
             <h1 className="font-semibold text-3xl md:text-7xl text-center w-full border-t border-b py-6 border-dashed text-balance px-4 text-black border-gray-300">
-              <span className="">Get Paid Faster with Free </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-pink-400">
-                Invoice Generator
+              <span className="">Professional </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0A1F44] to-[#1F4BA8]">
+                PrimeCoat
               </span>
+              <span className=""> Invoice Generator</span>
             </h1>
           </div>
           <div className="pt-10 pb-11 flex gap-3 items-center mx-auto border-gray-300 border-b w-full justify-center border-dashed relative">
             <Plus className="text-orange-500 group-hover:text-orange-500 w-7 h-7 absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2" />
             <Link
               href="/new"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring font-medium disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-br from-orange-500 to-pink-400 text-white hover:bg-black/90 px-6 py-2 text-lg"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring font-medium disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-br from-[#0A1F44] to-[#1F4BA8] text-white hover:opacity-90 px-6 py-2 text-lg"
             >
               Generate Invoice
             </Link>
@@ -118,7 +119,7 @@ const Home = () => {
           <DemoPreview />
         </div>
         <p className="font-medium text-xl md:text-3xl border-t border-gray-300 border-b border-dashed md:py-6 py-3 px-7 text-neutral-700 text-center">
-          Here&apos;s why you&apos;ll love our Free Invoice Generator
+          Why PrimeCoat Painting Services Uses This Invoice Generator
         </p>
         <div className="grid sm:grid-cols-2 relative">
           <Plus className="text-orange-500 group-hover:text-orange-500 w-7 h-7 absolute top-0 -translate-x-1/2 -translate-y-1/2 left-0" />
@@ -183,16 +184,15 @@ const Home = () => {
           </div>
         </div>
         <div className="px-5 py-11 flex justify-center items-center border-b border-dashed border-gray-300">
-          <div className="flex justify-center rounded-2xl max-w-3xl border-dashed items-center px-4 py-10 w-full flex-col gap-4  bg-gradient-to-br from-orange-100 to-pink-100">
+          <div className="flex justify-center rounded-2xl max-w-3xl border-dashed items-center px-4 py-10 w-full flex-col gap-4 bg-gradient-to-br from-blue-50 to-indigo-50">
             <p className="md:max-w-2xl text-center font-semibold text-xl text-black p-4 md:text-3xl text-balance">
-              Stop wasting time and start getting paid what you deserve. Try our
-              Free Invoice
+              Create professional invoices for your painting projects in Nairobi, Kenya
             </p>
             <Link
               href="/new"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring font-medium disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-br from-orange-500 to-pink-400 text-white hover:bg-black/90 px-6 py-2 text-lg"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring font-medium disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-br from-[#0A1F44] to-[#1F4BA8] text-white hover:opacity-90 px-6 py-2 text-lg"
             >
-              Generate Today!
+              Generate Invoice Now
             </Link>
           </div>
         </div>

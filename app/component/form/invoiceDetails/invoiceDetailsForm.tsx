@@ -10,7 +10,7 @@ import { Controller } from "react-hook-form";
 import { getItemValue } from "@/lib/getInitialValue";
 
 export const InvoiceDetailsForm = () => {
-  const value = useGetValue("currency", "INR");
+  const value = useGetValue("currency", "KES");
   const currencyDetails = currencyList.find(
     (currency) => currency.value.toLowerCase() === value.toLowerCase()
   )?.details;
@@ -19,16 +19,16 @@ export const InvoiceDetailsForm = () => {
     <Controller
       render={({ field: { onChange, value } }) => (
         <div className="pt-24">
-          <p className="text-2xl font-semibold pb-3">Invoice Details</p>
+          <p className="text-2xl font-semibold pb-3 font-heading text-prime-navy">Services & Pricing</p>
           <div className="flex flex-col gap-6">
             <div>
               <p className="pt-3 font-medium text-neutral-500">
-                Select an invoice currency
+                Select currency (KES default for Kenya)
               </p>
               <CurrencyInput />
             </div>
             <div>
-              <p className="py-3 font-medium text-sm text-neutral-500">Items</p>
+              <p className="py-3 font-medium text-sm text-neutral-500">Painting Services / Items</p>
               {value.map(
                 ({ itemDescription, amount, qty }: Item, index: number) => (
                   <div
@@ -56,7 +56,7 @@ export const InvoiceDetailsForm = () => {
                     </div>
                     <div className="w-full flex-1">
                       <Input
-                        placeholder="Item name"
+                        placeholder="e.g. Interior Painting - Living Room"
                         value={itemDescription}
                         type="text"
                         onChange={(e) => {

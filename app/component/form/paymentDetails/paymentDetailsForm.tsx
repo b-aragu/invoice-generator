@@ -3,36 +3,44 @@ import CustomNumberInput from "@/app/component/ui/customNumberInput";
 
 export const PaymentDetailsForm = () => (
   <div className="pt-24">
-    <p className="text-2xl font-semibold pb-3">Payment Details</p>
+    <p className="text-2xl font-semibold pb-3 font-heading text-prime-navy">Payment Details</p>
     <CustomTextInput
-      label="Bank name"
-      placeholder="HSBC"
-      variableName="bankName"
-    />
-    <CustomTextInput
-      label="Account number"
-      placeholder="8920804195"
-      variableName="accountNumber"
+      label="M-Pesa Number (Optional)"
+      placeholder="0740 459 672"
+      variableName="mpesaNumber"
     />
     <CustomTextInput
-      label="Account Name"
-      placeholder="Pranav"
-      variableName="accountName"
+      label="M-Pesa Name"
+      placeholder="PrimeCoat Painting Services"
+      variableName="mpesaName"
     />
-    <CustomTextInput
-      label="IFSC code"
-      placeholder="HSBC0560002"
-      variableName="ifscCode"
-    />
-    <CustomTextInput
-      label="Routing number"
-      placeholder="0804189592"
-      variableName="routingCode"
-    />
-    <CustomNumberInput
-      label="Swift code"
-      placeholder="HSBCINAA123"
-      variableName="swiftCode"
-    />
+    <div className="border-t border-dashed border-gray-300 my-6 pt-6">
+      <p className="text-sm font-medium text-neutral-500 mb-4">Bank Transfer Details</p>
+      <CustomTextInput
+        label="Bank name"
+        placeholder="e.g. Equity Bank, KCB, Co-operative Bank"
+        variableName="bankName"
+      />
+      <CustomTextInput
+        label="Account number"
+        placeholder="1234567890"
+        variableName="accountNumber"
+      />
+      <CustomTextInput
+        label="Account Name"
+        placeholder="PrimeCoat Painting Services"
+        variableName="accountName"
+      />
+      <CustomTextInput
+        label="Branch"
+        placeholder="e.g. Lavington Branch"
+        variableName="branchName"
+      />
+      <CustomTextInput
+        label="Swift Code (For International)"
+        placeholder="EQBLKENA"
+        variableName="swiftCode"
+      />
+    </div>
   </div>
 );

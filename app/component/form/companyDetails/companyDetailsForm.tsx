@@ -4,50 +4,50 @@ import ImageInput from "@/app/component/ui/imageInput";
 
 export const CompanyDetailsForm = () => (
   <div className="pt-24">
-    <p className="text-2xl font-semibold pb-3">Company Details (To)</p>
+    <p className="text-2xl font-semibold pb-3 font-heading text-prime-navy">Client Details (Bill To)</p>
     <CustomTextInput
-      label="Email"
-      placeholder="e.g. pranav@prolab.sh"
+      label="Client Email"
+      placeholder="e.g. client@company.co.ke"
       variableName="email"
     />
     <p className="pb-10 pt-3 text-xs font-medium text-neutral-500">
-      We&apos;ll fill the billing details automatically if we find the company.
+      Enter your client's information below.
     </p>
-    <p className="pb-2 text-sm font-medium text-neutral-500">Billing details</p>
+    <p className="pb-2 text-sm font-medium text-neutral-500">Client billing details</p>
     <CustomTextInput
-      label="Company name"
-      placeholder="Prolab Inc"
+      label="Client Name / Company"
+      placeholder="e.g. ABC Construction Ltd"
       variableName="companyName"
     />
-    <ImageInput label="Logo" variableName="companyLogo" />
+    <ImageInput label="Client Logo (Optional)" variableName="companyLogo" />
     <CustomTextInput
       label="Address"
-      placeholder="Whitefield Circle,12"
+      placeholder="e.g. Westlands, Nairobi"
       variableName="companyAddress"
     />
     <CustomTextInput
       label="City"
-      placeholder="Bangalore"
+      placeholder="Nairobi"
       variableName="companyCity"
     />
     <CustomTextInput
-      label="State"
-      placeholder="Karnataka"
+      label="County / State"
+      placeholder="Nairobi County"
       variableName="companyState"
     />
     <CustomNumberInput
-      label="Zip"
-      placeholder="560066"
+      label="Postal Code"
+      placeholder="00100"
       variableName="companyZip"
     />
     <CustomTextInput
       label="Country"
-      placeholder="India"
+      placeholder="Kenya"
       variableName="companyCountry"
     />
     <CustomTextInput
-      label="Tax ID"
-      placeholder="GSTIN 1234"
+      label="KRA PIN (Optional)"
+      placeholder="P000000000A"
       variableName="companyTaxId"
     />
   </div>

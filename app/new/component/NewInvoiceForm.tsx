@@ -31,15 +31,15 @@ export const NewInvoiceForm = () => {
             <div>
               <div className="flex gap-2 items-center">
                 <Image
-                  src="/android-chrome-512x512.png"
+                  src="/primecoat-logo.png"
                   width={40}
                   height={40}
                   className="rounded-lg"
-                  alt="logo"
+                  alt="PrimeCoat logo"
                 />
                 <div>
-                  <p className="font-semibold">Invoice Generator</p>
-                  <p className="text-orange-500 text-sm">By Prolab</p>
+                  <p className="font-semibold font-heading text-prime-navy">PrimeCoat Invoice Generator</p>
+                  <p className="text-prime-blue text-sm">Painting Services - Nairobi, Kenya</p>
                 </div>
               </div>
               <UserInputForm />

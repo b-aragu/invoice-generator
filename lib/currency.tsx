@@ -15,6 +15,7 @@ import {
   GB,
   FlagComponent,
   ID,
+  KE,
 } from "country-flag-icons/react/1x1";
 
 export const currencyList: {
@@ -29,6 +30,18 @@ export const currencyList: {
     iconName: string;
   };
 }[] = [
+  {
+    value: "KES",
+    label: "KES",
+    details: {
+      country: "Kenya",
+      currencySymbol: "KSh",
+      currencyName: "Kenyan Shilling",
+      currencyShortForm: "KES",
+      icon: KE,
+      iconName: "KE",
+    },
+  },
   {
     value: "INR",
     label: "INR",
