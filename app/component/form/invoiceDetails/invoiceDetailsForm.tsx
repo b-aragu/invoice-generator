@@ -17,7 +17,11 @@ export const InvoiceDetailsForm = () => {
 
   return (
     <Controller
-      render={({ field: { onChange, value } }) => (
+      render={({ field: { onChange, value } }) => {
+        // Ensure value is always an array of items
+        const items = Array.isArray(value) ? value : [];
+        
+        return (
         <div className="pt-24">
           <p className="text-2xl font-semibold pb-3 font-heading text-prime-navy">Services & Pricing</p>
           <div className="flex flex-col gap-6">
@@ -29,18 +33,18 @@ export const InvoiceDetailsForm = () => {
             </div>
             <div>
               <p className="py-3 font-medium text-sm text-neutral-500">Painting Services / Items</p>
-              {(value ?? []).map(
+              {items.map(
                 ({ itemDescription, amount, qty }: Item, index: number) => (
                   <div
                     className="flex relative items-center group -ml-8"
                     key={index}
                   >
                     <div
-                      className={`w-9 h-7 ${value.length === 1 && "invisible"}`}
+                      className={`w-9 h-7 ${items.length === 1 && "invisible"}`}
                     >
                       <button
                         onClick={() => {
-                          const newList = [...value];
+                          const newList = [...items];
                           newList.splice(index, 1);
                           localStorage.setItem(
                             "items",
@@ -60,7 +64,7 @@ export const InvoiceDetailsForm = () => {
                         value={itemDescription}
                         type="text"
                         onChange={(e) => {
-                          const updatedArray = [...value];
+                          const updatedArray = [...items];
                           updatedArray[index] = {
                             itemDescription: e.target.value,
                             amount,
@@ -86,7 +90,7 @@ export const InvoiceDetailsForm = () => {
                             /^-?\d*\.?\d*$/.test(inputValue) ||
                             inputValue === ""
                           ) {
-                            const updatedArray = [...value];
+                            const updatedArray = [...items];
                             updatedArray[index] = {
                               itemDescription,
                               amount,
@@ -113,7 +117,7 @@ export const InvoiceDetailsForm = () => {
                             /^-?\d*\.?\d*$/.test(inputValue) ||
                             inputValue === ""
                           ) {
-                            const updatedArray = [...value];
+                            const updatedArray = [...items];
                             updatedArray[index] = {
                               itemDescription,
                               amount: +inputValue,
@@ -136,9 +140,9 @@ export const InvoiceDetailsForm = () => {
                   onClick={() => {
                     localStorage.setItem(
                       "items",
-                      JSON.stringify([...value, { itemDescription: "" }])
+                      JSON.stringify([...items, { itemDescription: "" }])
                     );
-                    onChange([...value, { itemDescription: "" }]);
+                    onChange([...items, { itemDescription: "" }]);
                   }}
                   type="button"
                   className="flex justify-center items-center text-prime-blue hover:text-prime-navy font-medium text-sm gap-2 transition-colors"
@@ -171,9 +175,10 @@ export const InvoiceDetailsForm = () => {
             </div>
           </div>
         </div>
-      )}
-      name="items"
-      defaultValue={getItemValue()}
+        );
+      }}
+      name={"items" as any}
+      defaultValue={getItemValue() as any}
     />
   );
 };
