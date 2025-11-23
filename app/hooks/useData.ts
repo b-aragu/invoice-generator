@@ -58,7 +58,7 @@ export const useData = () => {
   };
 
   const paymentDetails = {
-    paymentMethod: paymentMethod as "mpesa" | "bank",
+    paymentMethod: (paymentMethod || "mpesa") as "mpesa" | "bank",
     mpesaNumber: mpesaNumber,
     mpesaName: mpesaName,
     bankName: bankName,

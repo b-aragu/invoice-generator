@@ -9,7 +9,7 @@ interface PaymentDetailsPdfProps extends PaymentDetails {
 }
 
 export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
-  paymentMethod = "mpesa",
+  paymentMethod,
   mpesaNumber,
   mpesaName,
   bankName,
@@ -26,6 +26,10 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
     (currencyDetail) =>
       currencyDetail.value.toLowerCase() === currency.toLowerCase()
   )?.details;
+
+  // Default to mpesa if not set, or if explicitly set to mpesa
+  const selectedPaymentMethod = paymentMethod || "mpesa";
+  const isMpesa = selectedPaymentMethod === "mpesa";
 
   return (
     <View
@@ -44,7 +48,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
           flexDirection: "column",
         }}
       >
-        {paymentMethod === "mpesa" ? (
+        {isMpesa ? (
           <>
             <Text style={{ paddingBottom: 12, ...pdfTypography.title, color: "#D97706" }}>
               📱 M-Pesa Payment
