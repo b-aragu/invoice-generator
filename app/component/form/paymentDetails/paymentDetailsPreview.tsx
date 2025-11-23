@@ -4,19 +4,27 @@ import { ChevronDown } from "lucide-react";
 export const PaymentDetailsPreview: React.FC<
   PaymentDetails & { onClick?: (step: string) => void }
 > = ({
+  paymentMethod,
+  mpesaNumber,
+  mpesaName,
   bankName,
   accountNumber,
   accountName,
+  branchName,
   routingCode,
   swiftCode,
   ifscCode,
-  currency = "INR",
+  currency = "KES",
   onClick,
 }) => {
   const currencyDetails = currencyList.find(
     (currencyDetails) =>
       currencyDetails.value.toLowerCase() === currency.toLowerCase()
   )?.details;
+
+  // Default to mpesa if not set
+  const selectedPaymentMethod = paymentMethod || "mpesa";
+  const isMpesa = selectedPaymentMethod === "mpesa";
 
   return (
     <div
@@ -32,79 +40,103 @@ export const PaymentDetailsPreview: React.FC<
         </>
       )}
       <div className="py-4 pl-10 pr-3">
-        <p className="text-[11px] text-neutral-400 font-medium uppercase mb-3">
-          Bank Details
-        </p>
-        <div className="space-y-1">
-          <div className="grid grid-cols-2 items-center">
-            <p className="truncate text-xs font-medium text-gray-500">
-              Bank Name
+        {isMpesa ? (
+          <>
+            <p className="text-[11px] text-amber-600 font-semibold uppercase mb-3">
+              📱 M-Pesa Payment
             </p>
-            {bankName ? (
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                {bankName}
-              </p>
-            ) : (
-              <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
-            )}
-          </div>
-          <div className="mb-2 grid grid-cols-2 items-center">
-            <p className="truncate text-xs font-medium text-gray-500">
-              Account Number
-            </p>
-            {accountNumber ? (
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                {accountNumber}
-              </p>
-            ) : (
-              <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
-            )}
-          </div>
-          <div className="mb-2 grid grid-cols-2 items-center">
-            <p className="truncate text-xs font-medium text-gray-500">
-              Account Name
-            </p>
-            {accountName ? (
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                {accountName}
-              </p>
-            ) : (
-              <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
-            )}
-          </div>
-          <div className="mb-2 grid grid-cols-2 items-center">
-            <p className="truncate text-xs font-medium text-gray-500">
-              Swift Code
-            </p>
-            {swiftCode ? (
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                {swiftCode}
-              </p>
-            ) : (
-              <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
-            )}
-          </div>
-          {routingCode && (
-            <div className="mb-2 grid grid-cols-2 items-center">
-              <p className="truncate text-xs font-medium text-gray-500">
-                Routing Code
-              </p>
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                {routingCode}
-              </p>
+            <div className="space-y-1">
+              <div className="grid grid-cols-2 items-center">
+                <p className="truncate text-xs font-medium text-gray-500">
+                  M-Pesa Number
+                </p>
+                {mpesaNumber ? (
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {mpesaNumber}
+                  </p>
+                ) : (
+                  <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
+                )}
+              </div>
+              <div className="mb-2 grid grid-cols-2 items-center">
+                <p className="truncate text-xs font-medium text-gray-500">
+                  Business Name
+                </p>
+                {mpesaName ? (
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {mpesaName}
+                  </p>
+                ) : (
+                  <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
+                )}
+              </div>
             </div>
-          )}
-          {ifscCode && (
-            <div className="mb-2 grid grid-cols-2 items-center">
-              <p className="truncate text-xs font-medium text-gray-500">
-                IFSC Code
-              </p>
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                {ifscCode}
-              </p>
+          </>
+        ) : (
+          <>
+            <p className="text-[11px] text-prime-navy font-semibold uppercase mb-3">
+              🏦 Bank Transfer
+            </p>
+            <div className="space-y-1">
+              <div className="grid grid-cols-2 items-center">
+                <p className="truncate text-xs font-medium text-gray-500">
+                  Bank Name
+                </p>
+                {bankName ? (
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {bankName}
+                  </p>
+                ) : (
+                  <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
+                )}
+              </div>
+              <div className="mb-2 grid grid-cols-2 items-center">
+                <p className="truncate text-xs font-medium text-gray-500">
+                  Account Number
+                </p>
+                {accountNumber ? (
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {accountNumber}
+                  </p>
+                ) : (
+                  <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
+                )}
+              </div>
+              <div className="mb-2 grid grid-cols-2 items-center">
+                <p className="truncate text-xs font-medium text-gray-500">
+                  Account Name
+                </p>
+                {accountName ? (
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {accountName}
+                  </p>
+                ) : (
+                  <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
+                )}
+              </div>
+              {branchName && (
+                <div className="mb-2 grid grid-cols-2 items-center">
+                  <p className="truncate text-xs font-medium text-gray-500">
+                    Branch
+                  </p>
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {branchName}
+                  </p>
+                </div>
+              )}
+              {swiftCode && (
+                <div className="mb-2 grid grid-cols-2 items-center">
+                  <p className="truncate text-xs font-medium text-gray-500">
+                    Swift Code
+                  </p>
+                  <p className="flex truncate text-xs font-medium text-gray-600">
+                    {swiftCode}
+                  </p>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
       <div className="py-4 px-10">
         <p className="text-[11px] text-neutral-400 font-medium uppercase mb-3">
