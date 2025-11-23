@@ -29,35 +29,25 @@ export const YourDetailsPreview: React.FC<YourDetails> = ({
       <div className="rounded-md bg-blue-100 h-5 w-5/6 animate-pulse mb-4" />
     )}
     {yourEmail ? (
-      <p className="text-prime-blue text-sm mb-3 flex items-center gap-1">
-        <span>📧</span> {yourEmail}
-      </p>
+      <p className="text-prime-blue text-sm mb-3">{yourEmail}</p>
     ) : (
       <div className="rounded-md bg-blue-100 h-4 w-4/6 animate-pulse my-2" />
     )}
-    <div className="text-xs text-neutral-600">
+    <div className="text-xs text-neutral-600 leading-relaxed">
       {yourAddress ? (
-        <p className="flex items-start gap-1">
-          <span>📍</span> <span>{yourAddress}</span>
-        </p>
+        <p>{yourAddress}</p>
       ) : (
         <div className="rounded-md bg-blue-100 h-4 w-3/6 animate-pulse my-2" />
       )}
-      {yourAddress || yourState || yourZip ? (
-        <p className="mb-0.5 ml-4">
-          {yourCity}, {yourState} {yourZip}
+      {(yourCity || yourCountry) && (
+        <p className="mb-1">
+          {yourCity}{yourCity && yourCountry ? ', ' : ''}{yourCountry}
         </p>
-      ) : (
+      )}
+      {!yourAddress && !yourCity && !yourCountry && (
         <div className="rounded-md bg-blue-100 h-4 w-4/6 animate-pulse my-3" />
       )}
-      {yourCountry ? (
-        <p className="mb-1 font-semibold flex items-center gap-1">
-          <span>🇰🇪</span> {yourCountry}
-        </p>
-      ) : (
-        <div className="rounded-md bg-blue-100 h-4 w-3/6 animate-pulse my-2" />
-      )}
-      {yourTaxId && <p className="text-[10px] text-neutral-500">KRA PIN: {yourTaxId}</p>}
+      {yourTaxId && <p className="text-[10px] text-neutral-500 mt-2">KRA PIN: {yourTaxId}</p>}
     </div>
   </div>
 );

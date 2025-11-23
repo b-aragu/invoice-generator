@@ -35,30 +35,20 @@ export const YourDetailsForm = () => (
       variableName="yourAddress"
       defaultValue="James Gichuru Road, Lavington"
     />
-    <CustomTextInput
-      label="City"
-      placeholder="Nairobi"
-      variableName="yourCity"
-      defaultValue="Nairobi"
-    />
-    <CustomTextInput
-      label="County / State"
-      placeholder="Nairobi County"
-      variableName="yourState"
-      defaultValue="Nairobi County"
-    />
-    <CustomNumberInput
-      label="Postal Code"
-      placeholder="00100"
-      variableName="yourZip"
-      defaultValue="00100"
-    />
-    <CustomTextInput
-      label="Country"
-      placeholder="Kenya"
-      variableName="yourCountry"
-      defaultValue="Kenya"
-    />
+    <div className="grid grid-cols-2 gap-4">
+      <CustomTextInput
+        label="City"
+        placeholder="Nairobi"
+        variableName="yourCity"
+        defaultValue="Nairobi"
+      />
+      <CustomTextInput
+        label="Country"
+        placeholder="Kenya"
+        variableName="yourCountry"
+        defaultValue="Kenya"
+      />
+    </div>
     <CustomTextInput
       label="Phone"
       placeholder="0740 459 672 | 0719 427 155"

@@ -35,25 +35,21 @@ export const CompanyDetailsPreview: React.FC<CompanyDetails> = ({
     ) : (
       <div className="rounded-md bg-neutral-200 h-4 w-4/6 animate-pulse my-2" />
     )}
-    <div className="text-xs text-neutral-500/80">
+    <div className="text-xs text-neutral-600 leading-relaxed">
       {companyAddress ? (
         <p>{companyAddress}</p>
       ) : (
-        <div className="rounded-md bg-neutral-100 h-4 w-3/6 animate-pulse my-2" />
+        <div className="rounded-md bg-neutral-200 h-4 w-3/6 animate-pulse my-2" />
       )}
-      {companyAddress || companyState || companyZip ? (
-        <p className="mb-0.5">
-          {companyCity}, {companyState} {companyZip}
+      {(companyCity || companyCountry) && (
+        <p className="mb-1">
+          {companyCity}{companyCity && companyCountry ? ', ' : ''}{companyCountry}
         </p>
-      ) : (
-        <div className="rounded-md bg-neutral-100 h-4 w-4/6 animate-pulse my-3" />
       )}
-      {companyCountry ? (
-        <p className="mb-1">{companyCountry}</p>
-      ) : (
-        <div className="rounded-md bg-neutral-100 h-4 w-3/6 animate-pulse my-2" />
+      {!companyAddress && !companyCity && !companyCountry && (
+        <div className="rounded-md bg-neutral-200 h-4 w-4/6 animate-pulse my-3" />
       )}
-      {companyTaxId && <p>Tax ID:{companyTaxId}</p>}
+      {companyTaxId && <p className="text-[10px] text-neutral-500 mt-2">Tax ID: {companyTaxId}</p>}
     </div>
   </div>
 );

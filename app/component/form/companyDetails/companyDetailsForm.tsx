@@ -25,26 +25,18 @@ export const CompanyDetailsForm = () => (
       placeholder="e.g. Westlands, Nairobi"
       variableName="companyAddress"
     />
-    <CustomTextInput
-      label="City"
-      placeholder="Nairobi"
-      variableName="companyCity"
-    />
-    <CustomTextInput
-      label="County / State"
-      placeholder="Nairobi County"
-      variableName="companyState"
-    />
-    <CustomNumberInput
-      label="Postal Code"
-      placeholder="00100"
-      variableName="companyZip"
-    />
-    <CustomTextInput
-      label="Country"
-      placeholder="Kenya"
-      variableName="companyCountry"
-    />
+    <div className="grid grid-cols-2 gap-4">
+      <CustomTextInput
+        label="City"
+        placeholder="Nairobi"
+        variableName="companyCity"
+      />
+      <CustomTextInput
+        label="Country"
+        placeholder="Kenya"
+        variableName="companyCountry"
+      />
+    </div>
     <CustomTextInput
       label="KRA PIN (Optional)"
       placeholder="P000000000A"
