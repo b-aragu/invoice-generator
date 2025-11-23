@@ -18,28 +18,44 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
   yourZip,
 }) => (
   <View style={pdfContainers.YourDetails}>
-    <Text style={{ ...pdfTypography.title, marginBottom: 14 }}>From</Text>
+    <Text style={{ ...pdfTypography.title, marginBottom: 14, color: "#0A1F44" }}>FROM</Text>
 
     <View style={pdfContainers.imageContainer}>
       {yourLogo && (
-        <Image style={{ height: 40, borderRadius: 6 }} src={yourLogo} />
+        <Image style={{ height: 45, borderRadius: 8 }} src={yourLogo} />
       )}
     </View>
-    {yourName && <Text style={pdfTypography.text2xl}>{yourName}</Text>}
+    {yourName && (
+      <Text style={{ ...pdfTypography.text2xl, color: "#0A1F44", fontWeight: "bold" }}>
+        {yourName}
+      </Text>
+    )}
     {yourEmail && (
-      <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
-        {yourEmail}
+      <Text style={{ ...pdfTypography.description, marginBottom: 8, color: "#1F4BA8" }}>
+        📧 {yourEmail}
       </Text>
     )}
     <View style={pdfTypography.description}>
-      {yourAddress && <Text>{yourAddress}</Text>}
+      {yourAddress && (
+        <Text style={{ marginBottom: 2 }}>
+          📍 {yourAddress}
+        </Text>
+      )}
       {(yourCity || yourState || yourZip) && (
         <Text style={{ marginBottom: 2 }}>
           {yourCity}, {yourState} {yourZip}
         </Text>
       )}
-      {yourCountry && <Text style={{ marginBottom: 4 }}>{yourCountry}</Text>}
-      {yourTaxId && <Text>Tax ID:{yourTaxId}</Text>}
+      {yourCountry && (
+        <Text style={{ marginBottom: 4, fontWeight: "bold" }}>
+          🇰🇪 {yourCountry}
+        </Text>
+      )}
+      {yourTaxId && (
+        <Text style={{ fontSize: 9, color: "#666" }}>
+          KRA PIN: {yourTaxId}
+        </Text>
+      )}
     </View>
   </View>
 );

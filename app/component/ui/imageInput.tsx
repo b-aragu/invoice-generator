@@ -9,9 +9,10 @@ import { Controller } from "react-hook-form";
 type CustomNumberProps = {
   label: string;
   variableName: string;
+  defaultImageUrl?: string;
 };
 
-export const ImageInput = ({ label, variableName }: CustomNumberProps) => {
+export const ImageInput = ({ label, variableName, defaultImageUrl }: CustomNumberProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleButtonClick = () => {
@@ -77,7 +78,7 @@ export const ImageInput = ({ label, variableName }: CustomNumberProps) => {
         </div>
       )}
       name={variableName}
-      defaultValue={getInitialValue(variableName)}
+      defaultValue={getInitialValue(variableName, defaultImageUrl)}
     />
   );
 };

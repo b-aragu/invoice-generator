@@ -21,9 +21,13 @@ export const YourDetailsForm = () => (
       variableName="yourName"
       defaultValue="PrimeCoat Painting Services"
     />
-    <ImageInput label="Logo" variableName="yourLogo" />
-    <p className="pb-2 pt-1 text-xs font-medium text-amber-600">
-      💡 Upload logo: /public/primecoat-logo.png
+    <ImageInput 
+      label="Logo" 
+      variableName="yourLogo"
+      defaultImageUrl="/primecoat-logo.png"
+    />
+    <p className="pb-2 pt-1 text-xs font-medium text-green-600">
+      ✅ PrimeCoat logo loaded automatically (click to change)
     </p>
     <CustomTextInput
       label="Address"
@@ -47,6 +51,7 @@ export const YourDetailsForm = () => (
       label="Postal Code"
       placeholder="00100"
       variableName="yourZip"
+      defaultValue="00100"
     />
     <CustomTextInput
       label="Country"

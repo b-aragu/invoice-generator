@@ -10,8 +10,10 @@ export const InvoiceTermsPdf: React.FC<InvoiceTerms> = ({
 }) => (
   <View style={pdfContainers.invoiceTerms}>
     <View style={{ flex: 1 }}>
-      <Text style={pdfTypography.title}>Invoice NO</Text>
-      <Text style={pdfTypography.subTitle}>{invoiceNumber}</Text>
+      <Text style={{ ...pdfTypography.title, color: "#0A1F44" }}>INVOICE NO</Text>
+      <Text style={{ ...pdfTypography.subTitle, color: "#1F4BA8", fontWeight: "bold", fontSize: 16 }}>
+        {invoiceNumber}
+      </Text>
     </View>
     <View
       style={{
@@ -22,14 +24,14 @@ export const InvoiceTermsPdf: React.FC<InvoiceTerms> = ({
       }}
     >
       <View>
-        <Text style={pdfTypography.title}>Issued</Text>
-        <Text style={pdfTypography.subTitle}>
+        <Text style={{ ...pdfTypography.title, color: "#0A1F44" }}>ISSUED</Text>
+        <Text style={{ ...pdfTypography.subTitle, color: "#1F4BA8" }}>
           {issueDate ? format(issueDate, "do MMM yyyy") : ""}
         </Text>
       </View>
       <View>
-        <Text style={pdfTypography.title}>Due Date</Text>
-        <Text style={pdfTypography.subTitle}>
+        <Text style={{ ...pdfTypography.title, color: "#0A1F44" }}>DUE DATE</Text>
+        <Text style={{ ...pdfTypography.subTitle, color: "#1F4BA8" }}>
           {dueDate ? format(dueDate, "do MMM yyyy") : ""}
         </Text>
       </View>
