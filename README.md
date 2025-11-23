@@ -1,52 +1,107 @@
-# Free Invoice Generator
+# PrimeCoat Invoice Generator 🇰🇪
 
-<a href="https://www.producthunt.com/posts/invoice-generator-9bce3e1b-dab2-4a7a-ba7e-e315be868119?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-invoice&#0045;generator&#0045;9bce3e1b&#0045;dab2&#0045;4a7a&#0045;ba7e&#0045;e315be868119" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=453378&theme=light&period=daily" alt="Invoice&#0032;Generator - Get&#0032;paid&#0032;faster&#0032;with&#0032;free&#0032;invoice&#0032;generator | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+Professional invoice generator customized for **PrimeCoat Painting Services** in Nairobi, Kenya.
 
-This project provides a user-friendly invoice generation tool for freelancers, small businesses, and contractors. Create professional, customized invoices quickly and easily to ensure you get paid on time, every time.
+This tool helps create beautiful, branded invoices with M-Pesa and bank payment options, making it easy to get paid for painting projects across Kenya.
 
-## ⛰️ Preview
+## ✨ Key Features
 
-![806shots_so](https://github.com/pranavp10/invoice-generator/assets/49075129/403cffa1-b540-4d62-a9bd-c3c216802fe1)
+### 🎨 **PrimeCoat Branding**
+- Pre-filled with PrimeCoat business details
+- Auto-loading company logo
+- Prime Navy & Blue color scheme
+- Professional Kenyan styling
 
-## Key Features
+### 💰 **Kenyan Payment Options**
+- **M-Pesa Payment:** Phone number with step-by-step instructions
+- **Bank Transfer:** Full bank details with branch info
+- Conditional display (shows only selected method)
 
-- **Free & Open Source:** Absolutely no cost, with the freedom to customize and adapt to your specific needs.
-- **Fast & Efficient:** Generate beautiful invoices in seconds by simply filling in the blanks.
-- **Unlimited Invoices:** Create as many invoices as you require, forever, at no charge.
-- **Save Time & Resources:** Eliminate the need for manual invoice creation with spreadsheets and expensive software.
+### 🚀 **Easy to Use**
+- All business details pre-filled (editable)
+- Clean, professional address format
+- Simple City + Country fields (no redundancy)
+- KES currency by default
 
-## 🤝 Contributing
+### 📄 **Professional Output**
+- Beautiful PDF invoices
+- Prime Navy/Blue branding throughout
+- Clear payment instructions
+- Mobile-friendly preview
 
-### Technologies Used
+### 🇰🇪 **Kenya-Focused**
+- KRA PIN support
+- Nairobi, Kenya defaults
+- M-Pesa integration
+- Local business format
 
-- **PDF Generator:** [React PDF](https://react-pdf.org/)
-- **Framework:** [Next.js](https://nextjs.org)
-- **Styling:** [Tailwind CSS](http://tailwindcss.com)
+## 🚀 Getting Started
 
-### Running Locally
+### Prerequisites
+- Node.js 18+ installed
+- npm or Bun package manager
 
-Ensure that you have Bun installed.
+### Installation
 
 ```bash
-git clone https://github.com/pranavp10/invoice-generator.git
+git clone https://github.com/b-aragu/invoice-generator.git
 cd invoice-generator
-bun install
-bun run dev
+npm install --legacy-peer-deps
+npm run dev
 ```
 
-Create `.env.local` file similar to `.env.example`.
+Open [http://localhost:3000](http://localhost:3000) to start creating invoices!
 
-[Live Invoice Generator Link](https://invoice-generator.prolab.sh/)
+## 📱 How to Use
 
-### License
+1. **Your Details:** Pre-filled with PrimeCoat info (logo auto-loads)
+2. **Client Details:** Enter client name, address, and contact
+3. **Invoice Items:** Add services with quantities and prices
+4. **Payment Method:** Choose M-Pesa OR Bank transfer
+5. **Generate PDF:** Download professional invoice instantly!
 
-You are free to use this code as inspiration. Please do not copy it directly. Crediting the author is appreciated. Please remove all personal information (images, etc.)
+## 🎨 Customization
 
-### Support
+### Brand Colors (tailwind.config.ts)
+```typescript
+'prime-navy': '#0A1F44',
+'prime-blue': '#1F4BA8',
+'prime-yellow': '#FFC93C',
+```
 
-- **Bug Reports:** To report bugs, create an issue on the project's GitHub repository.
-- **Feature Requests:** Feel free to suggest new features by creating an issue on GitHub.
+### Business Details
+Update defaults in:
+- `app/component/form/yourDetails/yourDetailsForm.tsx`
+- `app/component/form/paymentDetails/paymentDetailsForm.tsx`
 
-### Star History
+### Logo
+Replace `/public/primecoat-logo.png` with your logo
 
-[![Star History Chart](https://api.star-history.com/svg?repos=pranavp10/invoice-generator&type=Date)](https://star-history.com/#pranavp10/invoice-generator&Date)
+## 🛠️ Technologies Used
+
+- **Framework:** [Next.js 14](https://nextjs.org) (App Router)
+- **PDF Generator:** [React PDF](https://react-pdf.org/)
+- **Styling:** [Tailwind CSS](http://tailwindcss.com)
+- **TypeScript:** Full type safety
+- **Storage:** LocalStorage for form data
+
+## 📚 Documentation
+
+- `PRIMECOAT-BRANDING.md` - Branding guidelines
+- `HOW-TO-RUN.md` - Setup instructions
+- `KENYA-CUSTOMIZATION.md` - Kenya-specific features
+- `COMPLETE-FEATURES.md` - Full feature list
+
+## 📄 License
+
+MIT License - Feel free to use for your business!
+
+### Credits
+Based on the excellent [invoice-generator](https://github.com/pranavp10/invoice-generator) by [@pranavp10](https://github.com/pranavp10)
+
+## 💼 About PrimeCoat
+
+Professional painting services in Nairobi, Kenya
+- 📧 info@primecoat.co.ke
+- 📱 0740 459 672 | 0719 427 155
+- 🌐 https://primecoat.co.ke
