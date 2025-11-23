@@ -4,50 +4,50 @@ import ImageInput from "@/app/component/ui/imageInput";
 
 export const YourDetailsForm = () => (
   <div className="pt-24">
-    <p className="text-2xl font-semibold pb-3">Your Details (From)</p>
+    <p className="text-2xl font-semibold pb-3 font-heading text-prime-navy">Your Details (From)</p>
     <CustomTextInput
       label="Email"
-      placeholder="e.g. pranav@prolab.sh"
+      placeholder="info@primecoat.co.ke"
       variableName="yourEmail"
     />
     <p className="pb-10 pt-3 text-xs font-medium text-neutral-500">
-      We&apos;ll fill the billing details automatically if we find the your.
+      We&apos;ll fill the billing details automatically if we find them.
     </p>
     <p className="pb-2 text-sm font-medium text-neutral-500">Billing details</p>
     <CustomTextInput
       label="Your Name"
-      placeholder="Pranav"
+      placeholder="PrimeCoat Painting Services"
       variableName="yourName"
     />
     <ImageInput label="Logo" variableName="yourLogo" />
     <CustomTextInput
       label="Address"
-      placeholder="Whitefield Circle,12"
+      placeholder="James Gichuru Road, Lavington"
       variableName="yourAddress"
     />
     <CustomTextInput
       label="City"
-      placeholder="Bangalore"
+      placeholder="Nairobi"
       variableName="yourCity"
     />
     <CustomTextInput
       label="State"
-      placeholder="Karnataka"
+      placeholder="Nairobi County"
       variableName="yourState"
     />
     <CustomNumberInput
       label="Zip"
-      placeholder="560066"
+      placeholder="00100"
       variableName="yourZip"
     />
     <CustomTextInput
       label="Country"
-      placeholder="India"
+      placeholder="Kenya"
       variableName="yourCountry"
     />
     <CustomTextInput
       label="Tax ID"
-      placeholder="GSTIN 1234"
+      placeholder="KRA PIN: A000000000A"
       variableName="yourTaxId"
     />
   </div>

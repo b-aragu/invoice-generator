@@ -18,6 +18,16 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        'prime-navy': '#0A1F44',
+        'prime-blue': '#1F4BA8',
+        'prime-yellow': '#FFC93C',
+        'prime-grey': '#D9DCE1',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+      },
       fontSize: {
         xxs: '11px'
       },
