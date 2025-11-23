@@ -26,9 +26,13 @@ export const useData = () => {
   const taxRate = useGetValue("tax");
   const items = useItemParams();
 
+  const paymentMethod = useGetValue("paymentMethod");
+  const mpesaNumber = useGetValue("mpesaNumber");
+  const mpesaName = useGetValue("mpesaName");
   const bankName = useGetValue("bankName");
   const accountNumber = useGetValue("accountNumber");
   const accountName = useGetValue("accountName");
+  const branchName = useGetValue("branchName");
   const routingCode = useGetValue("routingCode");
   const swiftCode = useGetValue("swiftCode");
   const ifscCode = useGetValue("ifscCode");
@@ -37,7 +41,7 @@ export const useData = () => {
   const issueDate = useGetValue("issueDate");
   const dueDate = useGetValue("dueDate");
 
-  const currency = useGetValue("currency") || "INR";
+  const currency = useGetValue("currency") || "KES";
 
   const invoiceTerms = {
     invoiceNumber,
@@ -54,9 +58,13 @@ export const useData = () => {
   };
 
   const paymentDetails = {
+    paymentMethod: paymentMethod as "mpesa" | "bank",
+    mpesaNumber: mpesaNumber,
+    mpesaName: mpesaName,
     bankName: bankName,
     accountNumber: accountNumber,
     accountName: accountName,
+    branchName: branchName,
     routingCode: routingCode,
     swiftCode: swiftCode,
     ifscCode: ifscCode,
