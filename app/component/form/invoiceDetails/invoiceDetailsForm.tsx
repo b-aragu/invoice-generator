@@ -29,7 +29,7 @@ export const InvoiceDetailsForm = () => {
             </div>
             <div>
               <p className="py-3 font-medium text-sm text-neutral-500">Painting Services / Items</p>
-              {value.map(
+              {(value ?? []).map(
                 ({ itemDescription, amount, qty }: Item, index: number) => (
                   <div
                     className="flex relative items-center group -ml-8"
