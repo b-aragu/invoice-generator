@@ -9,6 +9,7 @@ export const InvoiceTermsForm = () => (
       label="Invoice number"
       placeholder="PC-INV-001"
       variableName="invoiceNo"
+      defaultValue="PC-INV-001"
     />
     <DateInput label="Issue date" variableName="issueDate" />
     <DateInput label="Due date" variableName="dueDate" />
@@ -16,11 +17,13 @@ export const InvoiceTermsForm = () => (
       label="Payment Terms"
       placeholder="50% deposit, 30% midpoint, 20% completion"
       variableName="paymentTerms"
+      defaultValue="50% deposit upon signing, 30% at midpoint, 20% upon completion"
     />
     <CustomTextInput
       label="Additional Notes"
       placeholder="All work includes materials and labor. 12-month warranty."
       variableName="additionalNotes"
+      defaultValue="All work includes premium materials and skilled labor. 12-month warranty on workmanship."
     />
   </div>
 );
