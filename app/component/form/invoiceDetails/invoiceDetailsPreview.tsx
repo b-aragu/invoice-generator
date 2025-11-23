@@ -22,32 +22,32 @@ export const InvoiceDetailsPreview: React.FC<
     >
       {!!onClick && (
         <>
-          <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-[135deg] group-hover:block hidden absolute top-0 left-0" />
-          <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-[135deg] group-hover:block hidden absolute top-0 right-0" />
-          <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-45 group-hover:block hidden absolute bottom-0 left-0" />
-          <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-45 group-hover:block hidden absolute bottom-0 right-0 " />
+          <ChevronDown className="animate-pulse w-5 h-5 text-prime-blue rotate-[135deg] group-hover:block hidden absolute top-0 left-0" />
+          <ChevronDown className="animate-pulse w-5 h-5 text-prime-blue -rotate-[135deg] group-hover:block hidden absolute top-0 right-0" />
+          <ChevronDown className="animate-pulse w-5 h-5 text-prime-blue rotate-45 group-hover:block hidden absolute bottom-0 left-0" />
+          <ChevronDown className="animate-pulse w-5 h-5 text-prime-blue -rotate-45 group-hover:block hidden absolute bottom-0 right-0 " />
         </>
       )}
-      <div className="grid grid-cols-2 items-center">
+      <div className="grid grid-cols-2 items-center bg-prime-navy">
         <div className="py-4 px-10">
-          <p className="text-[11px] text-neutral-400 font-medium uppercase">
-            Description
+          <p className="text-[11px] text-white font-bold uppercase">
+            DESCRIPTION
           </p>
         </div>
         <div className="py-4 px-10 grid grid-cols-3 items-center">
           <div>
-            <p className="text-[11px] text-neutral-400 font-medium uppercase">
+            <p className="text-[11px] text-white font-bold uppercase">
               QTY
             </p>
           </div>
           <div>
-            <p className="text-[11px] text-neutral-400 font-medium uppercase">
-              Price
+            <p className="text-[11px] text-white font-bold uppercase">
+              PRICE
             </p>
           </div>
           <div>
-            <p className="text-[11px] text-neutral-400 font-medium uppercase text-right">
-              Amount
+            <p className="text-[11px] text-white font-bold uppercase text-right">
+              AMOUNT
             </p>
           </div>
         </div>
@@ -121,13 +121,13 @@ export const InvoiceDetailsPreview: React.FC<
               </p>
             </div>
           )}
-          <div className="flex justify-between items-center px-10 py-3">
+          <div className="flex justify-between items-center px-10 py-3 bg-gradient-to-r from-prime-blue to-prime-navy">
             <div>
-              <p className="flex truncate text-xs font-medium text-gray-600">
-                Amount
+              <p className="flex truncate text-sm font-bold text-white uppercase">
+                TOTAL AMOUNT
               </p>
             </div>
-            <p className="flex truncate text-md font-medium">
+            <p className="flex truncate text-lg font-bold text-prime-yellow">
               {currencyDetails?.currencySymbol}
               {addCommasToNumber(totalAmount)}
             </p>
