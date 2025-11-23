@@ -43,9 +43,13 @@ interface InvoiceTerms {
 }
 
 interface PaymentDetails {
+  paymentMethod?: "mpesa" | "bank" | null;
+  mpesaNumber?: string | null;
+  mpesaName?: string | null;
   bankName?: string | null;
   accountNumber?: string | null;
   accountName?: string | null;
+  branchName?: string | null;
   routingCode?: string | null;
   swiftCode?: string | null;
   ifscCode?: string | null;
